@@ -6,3 +6,13 @@ services:
     build:
       context: .
       dockerfile: src/DataMonitoring.Worker/Dockerfile
+
+  mongo:
+    image: mongo
+    restart: always
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
