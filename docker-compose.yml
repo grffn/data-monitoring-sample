@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  datamonitoring.worker:
+    image: ${DOCKER_REGISTRY-}datamonitoringworker
+    build:
+      context: .
+      dockerfile: src/DataMonitoring.Worker/Dockerfile
