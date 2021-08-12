@@ -15,5 +15,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataMonitoring.Core\DataMonitoring.Core.csproj" />
+    <ProjectReference Include="..\DataMonitoring.MongoDb\DataMonitoring.Storage.MongoDb.csproj" />
   </ItemGroup>
 </Project>

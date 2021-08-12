@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataMonitoring.Worker", "sr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataMonitoring.Core", "src\DataMonitoring.Core\DataMonitoring.Core.csproj", "{B4788644-4635-43D2-991E-BB53D696AF07}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataMonitoring.Storage.MongoDb", "src\DataMonitoring.MongoDb\DataMonitoring.Storage.MongoDb.csproj", "{E137E86C-46C8-46EF-B3DC-1A8254E08CE7}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E582068F-17AB-4791-ACC3-371F94B2A629}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
@@ -50,6 +52,18 @@ Global
 		{B4788644-4635-43D2-991E-BB53D696AF07}.Release|x64.Build.0 = Release|Any CPU
 		{B4788644-4635-43D2-991E-BB53D696AF07}.Release|x86.ActiveCfg = Release|Any CPU
 		{B4788644-4635-43D2-991E-BB53D696AF07}.Release|x86.Build.0 = Release|Any CPU
+		{E137E86C-46C8-46EF-B3DC-1A8254E08CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E137E86C-46C8-46EF-B3DC-1A8254E08CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E137E86C-46C8-46EF-B3DC-1A8254E08CE7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E137E86C-46C8-46EF-B3DC-1A8254E08CE7}.Debug|x64.Build.0 = Debug|Any CPU
+		{E137E86C-46C8-46EF-B3DC-1A8254E08CE7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E137E86C-46C8-46EF-B3DC-1A8254E08CE7}.Debug|x86.Build.0 = Debug|Any CPU
+		{E137E86C-46C8-46EF-B3DC-1A8254E08CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E137E86C-46C8-46EF-B3DC-1A8254E08CE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E137E86C-46C8-46EF-B3DC-1A8254E08CE7}.Release|x64.ActiveCfg = Release|Any CPU
+		{E137E86C-46C8-46EF-B3DC-1A8254E08CE7}.Release|x64.Build.0 = Release|Any CPU
+		{E137E86C-46C8-46EF-B3DC-1A8254E08CE7}.Release|x86.ActiveCfg = Release|Any CPU
+		{E137E86C-46C8-46EF-B3DC-1A8254E08CE7}.Release|x86.Build.0 = Release|Any CPU
 		{5FF5DC26-D825-4CEE-B3BB-E83E31C48075}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5FF5DC26-D825-4CEE-B3BB-E83E31C48075}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FF5DC26-D825-4CEE-B3BB-E83E31C48075}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -69,6 +83,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B65AA646-638E-4ECA-AADE-FB7511B7CF4D} = {08805C55-857F-4B84-B836-2B3CA828CF0F}
 		{B4788644-4635-43D2-991E-BB53D696AF07} = {08805C55-857F-4B84-B836-2B3CA828CF0F}
+		{E137E86C-46C8-46EF-B3DC-1A8254E08CE7} = {08805C55-857F-4B84-B836-2B3CA828CF0F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1C265BE1-D80D-443B-B7AD-DDDE8BE51300}
