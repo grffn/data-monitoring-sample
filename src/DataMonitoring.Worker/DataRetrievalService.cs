@@ -2,6 +2,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using DataMonitoring.Core;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
@@ -9,14 +10,14 @@ namespace DataMonitoring.Worker
 {
     public class DataRetrievalService : IHostedService, IDisposable
     {
-        private readonly IDataProcessor _dataProcessor;
+        private readonly IServiceProvider _serviceProvider;
         private readonly ILogger<DataRetrievalService> _logger;
         private Timer? _timer;
         private bool disposedValue;
 
-        public DataRetrievalService(IDataProcessor dataProcessor, ILogger<DataRetrievalService> logger)
+        public DataRetrievalService(IServiceProvider serviceProvider, ILogger<DataRetrievalService> logger)
         {
-            _dataProcessor = dataProcessor;
+            _serviceProvider = serviceProvider;
             _logger = logger;
         }
 
@@ -40,7 +41,20 @@ namespace DataMonitoring.Worker
         private async void ProcessData(object? state)
         {
             _logger.LogDebug($"{nameof(ProcessData)} was triggered");
-            await _dataProcessor.ProcessData();
+
+            using (var scope = _serviceProvider.CreateScope())
+            {
+                try
+                {
+                    var dataProcessor = scope.ServiceProvider.GetRequiredService<IDataProcessor>();
+                    await dataProcessor.ProcessData();
+                }
+                // logging error and discarding it: we can do nothing at this point
+                catch (Exception exception)
+                {
+                    _logger.LogError(exception, "Error while processing data");
+                }
+            }
         }
 
         protected virtual void Dispose(bool disposing)
